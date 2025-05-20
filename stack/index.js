@@ -1,29 +1,16 @@
+// The implementation of the stack class
 
-var stack = [];
+const {Stack} = require("./Stack");
 
-var firstWord = "racecar";
+const stack = new Stack();
 
-var poppedWord = "";
+stack.push(6);
+stack.push(5);
+stack.push(4);
+stack.push(3);
+stack.push(2);
 
-// To put the word in the stack
-for(var i = 0; i < firstWord.length; i++){
-    stack.push(firstWord[i]);
-    // console.log(i);
-}
-
-
-while(stack.length > 0){
-    poppedWord += stack.pop();
-}
-
-if(poppedWord === firstWord){
-    console.log(`The word ${firstWord} is a palindrome `);
-}
-else{
-    console.log(`The word ${firstWord} is not a palindrome`);
-}
-
-
-// console.log(poppedWord);
-
-// console.log(varters);
+stack.peek();
+stack.pop();
+stack.peek();
+stack.count();

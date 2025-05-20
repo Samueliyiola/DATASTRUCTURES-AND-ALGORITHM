@@ -1,23 +1,35 @@
-const {Shape} = require( "../index.js");
+class Stack {
+    constructor(){
+        this.list = []
+    };   
+    push = (element) =>{
+        this.list.push(element);
+        console.log("The element has been added!");
+    };
 
-// const square = new Shape("blue", 9);
-
-// square.increaseSides();
-
-// console.log(Shape.cook());
-
-class Circle extends Shape{
-    constructor(color, sides, radius){
-        super(color, sides);
-        this.radius = radius;
+    pop = ()=>{
+        if(this.list.length < 1){
+           console.log("Cannot pop an empty stack");
+        }
+        const poppedElement = this.list[this.list.length - 1];
+        this.list.pop();
+        console.log(poppedElement);
     }
-    getArea = ()=>{
-        return (22 * this.radius * this.radius)/ 7;
+
+    count = ()=>{
+        console.log( "The number of elements is " + this.list.length);
     }
+
+    peek = ()=>{
+        if(this.list.length < 1){
+            console.log("Stack is empty");
+        }
+        console.log(this.list[this.list.length - 1]);
+
+    }
+    
 }
 
 
-const ellipse = new Circle("yellow", 0, 7);
-
-console.log(ellipse.getArea());
+module.exports = {Stack};
 
